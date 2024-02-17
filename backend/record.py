@@ -1,5 +1,6 @@
 import pyaudio
 import wave
+from whisperapi import processWhisper
 
 chunk = 1024  # Record in chunks of 1024 samples
 sample_format = pyaudio.paInt16  # 16 bits per sample
@@ -40,3 +41,4 @@ wf.setsampwidth(p.get_sample_size(sample_format))
 wf.setframerate(fs)
 wf.writeframes(b''.join(frames))
 wf.close()
+processWhisper(filename)

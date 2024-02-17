@@ -6,9 +6,9 @@
             position: fixed; /* Set the navbar to fixed position */
             top: 0; /* Position the navbar at the top of the page */
             width: 100%; /* Full width */
+            background-color:rgb(255, 255, 255);
         }
         
-          /* Links inside the navbar */
         .navbar a {
             float: right;
             display: block;
@@ -17,32 +17,86 @@
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
+            font-size: 20px;
+            margin-right: 20px;
         }
-        
-          /* Change background on mouse-over */
+
         .navbar a:hover {
             background: #b8b7b7;
             color: rgb(255, 255, 255);
         }
 
-        .h1 {
+        .header {
             font-family: inherit;
             color:rgb(0, 0, 0);
             text-align:center; 
+            margin-top: 50px;
         }
           /* Main content */
         .main {
             margin-top: 30px; /* Add a top margin to avoid content overlay */
         }
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-bottom: 100px;
+        }
+        .about{
+            text-align:center;
+            inline-size: 300px;
+            margin-top: 100;
+            font-size: 30px;
+            margin-left: 100px;
+        }
+        .flex-container2 {
+            display: flex;
+            flex-direction: row;
+            border-radius: 50%;
+            padding: 50px;
+        }
+
+        .aboutus{
+            text-align: center;
+        }
+
+        .team{
+            text-align: center;
+        }
+
+        .team{
+            text-align:center;
+        }
+
+
         </style>
         <title> Glyf </title>
-        <h1> glyph </h1>
     </head>
+
     <body>
         <div class="navbar">
             <a href="#home">Home</a>
-            <a href="#login">Login</a>
+            <a href="#login">Log In</a>
+            <a href="#signup">Sign Up</a>
             <a href="#stories">Stories</a>
         </div>
+        <div class="header">
+            <h1>Glyf</h1>
+        </div>
+        <div class="flex-container">
+            <img src="stamps.png" alt="stamps" width="400" height="400">
+            <div class="about"> Super important project that means a lot and everyone will use and yeah we should win also preserving cultures which is cool!</div>
+        </div>
+        <div class="aboutus"> <h1> About: </h1> Glyph is an online database that works intergenerationally to preserve cultures stories and languages. </div>
+        <dic class="team"><h1>Team:</h1></div>
+        <div class="flex-container2">  
+            <img src="arran.jpg" alt="arran" width="100" height=auto>
+            <img src="samhita.jpg" alt="samhita" width="100" height=auto>
+            <img src="gwyn.jpg" alt="gwyn" width="100" height=auto>
+            <img src="stamps.png" alt="stamps" width="100" height="100">
+            <img src="stamps.png" alt="stamps" width="100" height="100">
+            <img src="stamps.png" alt="stamps" width="100" height="100">  
+        </div>
+        <div class="pictures"> <p> Anika, David, Arran, David, Samhita, Gwyn </p></div>
     </body>
 </html>

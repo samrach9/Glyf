@@ -1,9 +1,16 @@
 # This code is for v1 of the openai package: pypi.org/project/openai
-import backend.openai as openai
+#import backend.openai as openai
 import jsonify
+import os
 import json
-client = openai.OpenAI(api_key="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")
-import readingFronty
+from openai import OpenAI
+import os
+import config
+from dotenv import load_dotenv
+load_dotenv()
+
+#print(os.environ.get("OPENAI_API_KEY"))
+client = OpenAI()
 
 def processAI(x):
     response = client.chat.completions.create(
@@ -23,4 +30,5 @@ def processAI(x):
 
 
     jsonified_response=json.loads(response.json())
+    print(jsonified_response["choices"][0]["message"]["content"])
     return(jsonified_response["choices"][0]["message"]["content"])

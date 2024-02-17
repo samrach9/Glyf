@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import os
 from openai import OpenAI
 client = OpenAI()
+from openai_test import processAI
 
 # Load environment variables from .env file
 load_dotenv()
@@ -22,4 +23,5 @@ transcript = client.audio.translations.create(
   response_format="text"
 )
 
-print(transcript)
+#print(transcript)
+processAI(transcript)

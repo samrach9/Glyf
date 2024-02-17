@@ -29,9 +29,34 @@ def processAI(x):
         frequency_penalty=0,
         presence_penalty=0
     )
-
+    tags(x)
     jsonified_response=json.loads(response.model_dump_json())
     print(jsonified_response["choices"][0]["message"]["content"])
-    return(jsonified_response["choices"][0]["message"]["content"])
+    
+    
+
+
+def tags(x):
+    response1 = client.chat.completions.create(
+        model="gpt-4",
+        
+        
+        messages=[
+        {
+            "role": "user",
+            "content": f"please tag this story with these four tags: location, historical event/ cultural event, decade of historical even, and personal story theme, seperated by commas: {x}"
+        }
+        ],
+        temperature=1,
+        max_tokens=256,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0
+    )
+    jsonified_response1=json.loads(response1.model_dump_json())
+    print(jsonified_response1["choices"][0]["message"]["content"])
+
+
+    
 
 #processAI("my name is arran, and i lived through the partition as i moved from pakistan to india")

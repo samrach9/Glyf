@@ -1,5 +1,5 @@
 # This code is for v1 of the openai package: pypi.org/project/openai
-import openai
+import backend.openai as openai
 import jsonify
 import json
 client = openai.OpenAI(api_key="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")
@@ -11,7 +11,7 @@ def processAI(x):
         messages=[
         {
             "role": "user",
-            "content": f"What is the vibe of these words->"
+            "content": f"Please summarize this story, highlighting aspects that relate to cultural history"
         }
         ],
         temperature=1,

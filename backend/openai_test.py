@@ -34,4 +34,4 @@ def processAI(x):
     print(jsonified_response["choices"][0]["message"]["content"])
     return(jsonified_response["choices"][0]["message"]["content"])
 
-processAI("my name is arran, and i lived through the partition as i moved from pakistan to india")
+#processAI("my name is arran, and i lived through the partition as i moved from pakistan to india")

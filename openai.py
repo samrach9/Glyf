@@ -2,8 +2,8 @@
 import openai
 import jsonify
 import json
-client = openai.OpenAI(api_key="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")
-import readingFronty
+client = openai.OpenAI(api_key="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")
+#import readingFronty
 
 def processAI(x):
     response = client.chat.completions.create(
@@ -11,7 +11,7 @@ def processAI(x):
         messages=[
         {
             "role": "user",
-            "content": f"give me JUST a number: AVERAGE time spent in {x} without any extra words. don't say \"the average time spent in a {x} is\" and don't say “minute”. the unit will be minutes, but only give the number back"
+            "content": f"What is the vibe of these words->"
         }
         ],
         temperature=1,

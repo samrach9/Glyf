@@ -15,10 +15,12 @@ client = OpenAI()
 def processAI(x):
     response = client.chat.completions.create(
         model="gpt-4",
+        
+        
         messages=[
         {
             "role": "user",
-            "content": f"Please summarize this story, highlighting aspects that relate to cultural history"
+            "content": f"Please summarize this story: {x}"
         }
         ],
         temperature=1,
@@ -28,7 +30,8 @@ def processAI(x):
         presence_penalty=0
     )
 
-
-    jsonified_response=json.loads(response.json())
+    jsonified_response=json.loads(response.model_dump_json())
     print(jsonified_response["choices"][0]["message"]["content"])
     return(jsonified_response["choices"][0]["message"]["content"])
+
+#processAI("my name is arran, and i lived through the partition as i moved from pakistan to india")

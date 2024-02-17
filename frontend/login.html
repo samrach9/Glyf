@@ -1,3 +1,54 @@
 <html>
-    
+    <head>
+        <style>
+        .navbar {
+            overflow: hidden;
+            position: fixed; /* Set the navbar to fixed position */
+            top: 0; /* Position the navbar at the top of the page */
+            width: 100%; /* Full width */
+            background-color:rgb(255, 255, 255);
+        }
+        
+        .navbar a {
+            float: right;
+            display: block;
+            color: #000000;
+            font-family: inter;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            margin-right: 20px;
+        }
+
+        .navbar a:hover {
+            background: #b8b7b7;
+            color: rgb(255, 255, 255);
+        }
+
+        .header {
+            font-family: inherit;
+            color:rgb(0, 0, 0);
+            text-align:center; 
+            margin-top: 75px;
+            margin-bottom:100px;
+        }
+          /* Main content */
+        .main {
+            margin-top: 30px; /* Add a top margin to avoid content overlay */
+        }
+        </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <a href="#home.html">Home</a>
+            <a href="#login.html">Log In</a>
+            <a href="#signup">Sign Up</a>
+            <a href="#stories.html">Stories</a>
+        </div>
+
+        <div class="header">
+            <h1>Glyf</h1>
+        </div>
+    </body>
 </html>

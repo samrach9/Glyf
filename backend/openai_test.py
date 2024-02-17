@@ -12,13 +12,15 @@ load_dotenv()
 #print(os.environ.get("OPENAI_API_KEY"))
 client = OpenAI()
 
-def processAI(x):
+def processAI():
     response = client.chat.completions.create(
         model="gpt-4",
+        
+        
         messages=[
         {
             "role": "user",
-            "content": f"Please summarize this story, highlighting aspects that relate to cultural history"
+            "content": f"Please summarize this story: i am a young boy named arran and im from india punjab"
         }
         ],
         temperature=1,
@@ -28,7 +30,7 @@ def processAI(x):
         presence_penalty=0
     )
 
-
-    jsonified_response=json.loads(response.json())
+    jsonified_response=json.loads(response.model_dump_json())
     print(jsonified_response["choices"][0]["message"]["content"])
     return(jsonified_response["choices"][0]["message"]["content"])
+

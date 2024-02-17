@@ -3,7 +3,7 @@ import openai
 import jsonify
 import json
 client = openai.OpenAI(api_key="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")
-#import readingFronty
+import readingFronty
 
 def processAI(x):
     response = client.chat.completions.create(

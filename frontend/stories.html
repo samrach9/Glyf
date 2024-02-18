@@ -75,11 +75,15 @@
     margin: 20px;
     width: 280px;
     height: 350px;
+    padding-bottom: 10px;
     text-align: center;
     background-color: rgb(254, 231, 203);
     border-radius: 10%;
     transition: all 0.3s ease;
     cursor: pointer;
+    display: flex; 
+    flex-direction: column; 
+    flex-grow: 1;
 }
     .storyImage {
         border: 1px solid white;
@@ -107,6 +111,17 @@
         font-size: 85%;
         font-weight: 350;
         color: #24541C;
+    }
+
+    .storyCardSummary {
+        margin: 2px;
+        font-family: inter;
+        font-size: 85%;
+        font-weight: 450;
+        color: #24541C;
+        padding-left: 5%;
+        padding-right: 5%;
+        flex-grow: 1;
     }
 
     .expanded {
@@ -157,7 +172,7 @@
                 title: 'Story 1',
                 time: '5:30 pm P.S.T., Saturday, 2/17/24',
                 uploadedBy: 'user123',
-                summary: 'Today I went to the store and I bought some salmon and broccoli to make for dinner for the next week.'
+                summary: 'Today I went to the store and I bought some salmon and broccoli to make for dinner for the next week. Today I went to the store and I bought some salmon and broccoli to make for dinner for the next week.'
             },
             {
                 title: 'Story 2',
@@ -203,7 +218,7 @@
             <p class="storyCardFont">${story.title}</p>
             <p class="storyCardDetails">${story.time}</p>
             <p class="storyCardDetails">Uploaded by: ${story.uploadedBy}</p>
-            <p class="storyCardDetails hiddenText">${story.summary}</p>
+            <p class="storyCardSummary hiddenText">${story.summary}</p>
         </div>
     `;
 
@@ -226,6 +241,10 @@
             if (stories.length === 0) {
                 // If there are no items in the list, print out "no stories"
                 const message = document.createElement('p');
+                message.style.color = '#24541C';
+                message.style.fontSize = '200%';
+                message.style.fontFamily = 'inter';
+                message.style.marginTop = '10%';
                 message.textContent = 'No stories here yet!';
                 storyContainer.appendChild(message);
             } else {

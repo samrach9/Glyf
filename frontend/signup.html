@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+        <style>
+            .navbar {
+                overflow: hidden;
+                position: fixed; /* Set the navbar to fixed position */
+                top: 0; /* Position the navbar at the top of the page */
+                width: 100%; /* Full width */
+                background-color:rgb(251, 217, 176);
+            }
+        
+            .navbar a {
+                float: right;
+                display: block;
+                color: #000000;
+                font-family: inter;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 20px;
+                margin-right: 20px;
+            }
+
+            .navbar a:hover {
+                background: rgb(144, 186, 144);
+                color: rgb(255, 255, 255);
+            }
+
+            input[type=text], select {
+                width: 20%;
+                padding: 14px 20px;
+                margin: 8px 0px;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            input[type=password] {
+                width: 20%;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            input[type=submit]{
+                background-color: #ffffff;
+                width: 20%;
+            }
+            input[type=submit]:hover {
+                background-color: #729f74;
+                width: 20%;
+            }
+            .login {
+                font-family: inter;
+                display: flex;
+                flex-direction: column;
+                margin-top: 100px;
+                text-align: center;
+                margin-bottom:100px;
+                background-color: bisque;
+                font-size: 20px;
+            }
+        </style>
+        <title> Glyf </title>
+        <link rel="icon" type="image/x-icon" href="favicon.png">
+    </head>
+    <body>
+        <div class="navbar">
+            <a href="home.html">Home</a>
+            <a href="signup.html">Log In</a>
+            <a href="stories.html">Stories</a>
+            <a href="record.html">Record</a>
+        </div>
+
+        <div class="header">
+            <p2>Glyf</p2>
+        </div>
+
+        <div class="login">
+            <label for="Username">Username</label>
+            <input type="text" id="username" name="Username" placeholder="Username">
+
+            <label for="Password">Password</label>
+            <input type="password" id="password" name="Password" placeholder="Password">
+
+            <button type="button"><a href="success.html">submit</a></button>
+        </div>
+        </body>
+</html>

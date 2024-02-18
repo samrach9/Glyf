@@ -154,10 +154,10 @@
             <script>
                 function changeImage() {
                     var imageElement = document.querySelector('.img');
-            
+                    imageElement.src = 'redX.png';
             // Check the current source and change it accordingly
                     setTimeout(function () {
-                        imageElement.src = 'redX.png'; // Original image
+                        imageElement.src = 'mic.png'; // Original image
                     }, 10000);
 
                     imageElement.src = 'mic.png';

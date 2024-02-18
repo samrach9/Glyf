@@ -59,30 +59,32 @@
         color: #000000;
         margin-left: 30px;
         margin-right: 30px;
+        display: flex;  /* Add this line to make it a flex container */
+        flex-wrap: wrap; /* Ensures items wrap properly */
+        justify-content: center; /* Centers items horizontally */
     }
-    .storyRowContainer {
+    /*.storyRowContainer {
        display: flex;
-       flex-wrap: wrap; /* Ensures items wrap properly */
-       justify-content: center; /* Centers items horizontally */
+       flex-wrap: wrap; /* Ensures items wrap properly *//*
+       justify-content: center; /* Centers items horizontally *//*
        margin-top: 10px;
        margin-bottom: 10px;
-    }
+    }*/
     .storyCard {
-        border: 1px solid rgb(254, 231, 203);
-        margin: 20px;
-        height: 350px;
-        width: 280px;
-        text-align: center;
-        background-color: rgb(254, 231, 203);
-        border-radius: 10%;
-        transition: all 0.3s ease; 
-        cursor: pointer; 
-    }
+    border: 1px solid rgb(254, 231, 203);
+    margin: 20px;
+    width: 280px; /* Remove height property */
+    text-align: center;
+    background-color: rgb(254, 231, 203);
+    border-radius: 10%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
     .storyImage {
         border: 1px solid white;
-        height: 225px;
         width: 225px;
         margin: auto;
+        height:225px;
         border-radius: 10%;
         margin-top: 20px;
         margin-bottom: 10px;
@@ -142,15 +144,31 @@
         <p2>Stories</p2>
     </div>
     
-    <div class="storyContainer">
-        <div class="row" id="storyRowContainer">
-            
-        </div>
+    <div class="storyContainer" id="storyRowContainer">
+        <!-- This div will now directly contain the story cards -->
     </div>
 
     <!-- Javascript to populate cards -->
     <script>
         const stories = [
+            {
+                title: 'Story 1',
+                time: '5:30 pm P.S.T., Saturday, 2/17/24',
+                uploadedBy: 'user123',
+                summary: 'Today I went to the store and I bought some salmon and broccoli to make for dinner for the next week.'
+            },
+            {
+                title: 'Story 2',
+                time: '6:00 pm P.S.T., Sunday, 2/18/24',
+                uploadedBy: 'user456',
+                summary: 'Today I went to the store and I bought some salmon and broccoli to make for dinner for the next week.'
+            },
+            {
+                title: 'Story 3',
+                time: '6:00 pm P.S.T., Sunday, 2/18/24',
+                uploadedBy: 'user456',
+                summary: 'Today I went to the store and I bought some salmon and broccoli to make for dinner for the next week.'
+            },
             {
                 title: 'Story 1',
                 time: '5:30 pm P.S.T., Saturday, 2/17/24',
@@ -175,29 +193,29 @@
         // Function to create a story card HTML element
         function createStoryCard(story) {
             const storyCard = document.createElement('div');
-            storyCard.classList.add('storyCard');
+            //storyCard.classList.add('storyCard');
 
             storyCard.innerHTML = `
-                <div class="cardDisplay storyCard" onclick="expandCard(this)">
-                    <div class="storyImage"></div>
-                    <p class="storyCardFont">${story.title}</p>
-                    <p class="storyCardDetails">${story.time}</p>
-                    <p class="storyCardDetails">Uploaded by: ${story.uploadedBy}</p>
-                    <p class="storyCardDetails hiddenText">${story.summary}</p>
-                </div>
-            `;
+        <div class="cardDisplay storyCard" onclick="expandCard(this)">
+            <div class="storyImage"></div>
+            <p class="storyCardFont">${story.title}</p>
+            <p class="storyCardDetails">${story.time}</p>
+            <p class="storyCardDetails">Uploaded by: ${story.uploadedBy}</p>
+            <p class="storyCardDetails hiddenText">${story.summary}</p>
+        </div>
+    `;
 
-            storyCard.querySelector('.cardDisplay').addEventListener("click", function() {
-                var hiddenText = this.querySelector('.hiddenText');
-                if (hiddenText.style.display === "none" || hiddenText.style.display === "") {
-                    hiddenText.style.display = "block";
-                } else {
-                    hiddenText.style.display = "none";
-                }
-            });
-
-            return storyCard;
+    storyCard.querySelector('.cardDisplay').addEventListener("click", function() {
+        var hiddenText = this.querySelector('.hiddenText');
+        if (hiddenText.style.display === "none" || hiddenText.style.display === "") {
+            hiddenText.style.display = "block";
+        } else {
+            hiddenText.style.display = "none";
         }
+    });
+
+    return storyCard;
+}
 
         // Function to populate story cards
         function populateStoryCards() {

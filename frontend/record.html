@@ -54,8 +54,9 @@
         }
         .img {
             max-width: 300px;
-            max-height: 300px;
+            max-height: 300px;       
         }
+
 
         .about{
             font-family: inter;
@@ -152,16 +153,22 @@
             <img class="img" src="mic.png" alt="Image 1" onclick="changeImage()">
 
             <script>
-                function changeImage() {
-                var imageElement = document.querySelector('.img');
-            
-            // Check the current source and change it accordingly
-                if (imageElement.src.endsWith('mic.png')) {
+                document.addEventListener('DOMContentLoaded', function () {
+                
+                var imageElement = document.createElement('img');
+                imageElement.src = 'mic.png'; // Initial image
+                imageElement.alt = 'Toggle Button';
+                imageElement.id = 'toggleButton';
+
+                document.body.appendChild(imageElement);
+
+                imageElement.addEventListener('click', function () {
                     imageElement.src = 'redX.png';
-                } else {
-                    imageElement.src = 'mic.png';
-                }
-            }
+                    setTimeout(function () {
+                        imageElement.src = 'image1.jpg'; // Original image
+                    }, 10000);
+                });
+            });                
         </script>
             <div class="about"> reccorind etc. </div>
         </div>

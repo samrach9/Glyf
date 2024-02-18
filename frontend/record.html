@@ -52,6 +52,11 @@
             justify-content: center;
             margin-top: 100px;
         }
+        .img {
+            max-width: 300px;
+            max-height: 300px;
+        }
+
         .about{
             font-family: inter;
             text-align:center;
@@ -143,14 +148,14 @@
 
         <button onclick="changeImage()">Change Image</button>
 
-        <div class="flex-container"><
+        <div class="flex-container">
             <script>
                 function changeImage() {
                     var imageElement = document.getElementById('myImage');
             
             // Check the current source and change it accordingly
                 if (imageElement.src.endsWith('mic.png')) {
-                        imageElement.src = 'mic.png';
+                        imageElement.src = 'mic.PNG';
                     } else {
                         imageElement.src = 'redX.png';
                     }
@@ -160,10 +165,6 @@
         </div>
 
 
-        <div class="flex-container">
-            <img src="mic.png" alt="mic" width="400" height="400">
-            <div class="about"> Super important project that means a lot and everyone will use and yeah we should win also preserving cultures which is cool!</div>
-        </div>
 
         <div class="flex-container3"> 
             <p2> About: </p2> 

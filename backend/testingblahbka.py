@@ -1,34 +1,23 @@
-
 import csv
 import json
- 
-# Function to convert a CSV to JSON
-# Takes the file paths as arguments
 
 def make_json(csvFilePath, jsonFilePath):
-     
-    # create a dictionary
-    data = {}
-     
-    # Open a csv reader called DictReader
+    # create a list to hold the data
+    data = []
+    
+    # Open the CSV file and read its contents
     with open(csvFilePath, encoding='utf-8') as csvf:
         csvReader = csv.DictReader(csvf)
-         
-        # Convert each row into a dictionary 
-        # and add it to data
-        for rows in csvReader:
-             
-            # Assuming a column named 'No' to be the primary key
-            key = rows["Original Story"]
-            data[key] = rows
+        
+        # Iterate over each row in the CSV file
+        for idx, rows in enumerate(csvReader):
+            # Add the row data to the list with the row number as the key
+            data.append({idx: rows})
+            
+    # Write the list of dictionaries to a JSON file
+    with open(jsonFilePath, 'w', encoding='utf-8') as jsonf:
+        json.dump(data, jsonf, indent=4)
  
-    # Open a json writer, and use the json.dumps() 
-    # function to dump data
-    """with open(jsonFilePath, 'w', encoding='utf-8') as jsonf:
-        jsonf.write(json.dumps(data, indent=4))"""
-
-    json_obj = json.dumps(data, indent=4)
-    return (json_obj)
 
          
 # Testing
@@ -41,5 +30,6 @@ jsonFilePath = r'/Users/anikasethi/Documents/GitHub/Glyf/frontend/testbla.json'
 print(type(jsonFilePath))
 # Call the make_json function
 
-print(make_json(csvFilePath, jsonFilePath))
+hi = make_json(csvFilePath, jsonFilePath)
+print(type(hi))
 

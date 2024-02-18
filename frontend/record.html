@@ -11,8 +11,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
         <style>
         .navbar {
@@ -153,14 +153,14 @@
         <div class="flex-container">
             <img class="img" src="mic.png" alt="Image 1" onclick="changeImage()" >
             <script>
-                function changeImage() {
-                var imageElement = document.querySelector('.img');
-
+                async function changeImage() {
+                    var imageElement = document.querySelector('.img');
                     imageElement.src = 'redX.png'
+                    const output = await fetch('http://127.0.0.1:5000/summarizer').then(response => response.json())
                     setTimeout(function () {
                         imageElement.src = 'mic.png';
-                        document.getElementById("demo").innerHTML = "Here is what you said!";
-                    }, 10000);
+                        document.getElementById("demo").innerHTML = output;
+                    }, 0);
                 }
         </script>
         <p id="demo"></p>

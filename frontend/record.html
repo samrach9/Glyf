@@ -118,7 +118,7 @@
         .flex-container4 {
             font-family: inter;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             margin-top: 50px;
             margin-bottom:50px;
         }
@@ -145,7 +145,7 @@
 
 
         <div class="flex-container">
-            <img class="img" src="mic.png" alt="Image 1" onclick="changeImage()">
+            <img class="img" src="mic.png" alt="Image 1" onclick="changeImage()" >
             <script>
                 function changeImage() {
                 var imageElement = document.querySelector('.img');
@@ -153,11 +153,11 @@
                     imageElement.src = 'redX.png'
                     setTimeout(function () {
                         imageElement.src = 'mic.png';
+                        document.getElementById("demo").innerHTML = "Here is what you said!";
                     }, 10000);
-                    <div class="flex-container3"> </div>
                 }
         </script>
-            <div class="about"> reccorind etc. </div>
+        <p id="demo"></p>
         </div>
         
     </body>

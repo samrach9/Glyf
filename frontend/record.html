@@ -153,14 +153,14 @@
         <div class="flex-container">
             <img class="img" src="mic.png" alt="Image 1" onclick="changeImage()" >
             <script>
-                function changeImage() {
-                var imageElement = document.querySelector('.img');
-
+                async function changeImage() {
+                    var imageElement = document.querySelector('.img');
                     imageElement.src = 'redX.png'
+                    const output = await fetch('http://127.0.0.1:5000/summarizer').then(response => response.json())
                     setTimeout(function () {
                         imageElement.src = 'mic.png';
-                        document.getElementById("demo").innerHTML = "Here is what you said!";
-                    }, 10000);
+                        document.getElementById("demo").innerHTML = output;
+                    }, 0);
                 }
         </script>
         <p id="demo"></p>

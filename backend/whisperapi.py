@@ -19,3 +19,5 @@ def processWhisper(x):
 
 #print(transcript)
   processAI(transcript)
+
+processWhisper("output.wav")

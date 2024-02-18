@@ -1,6 +1,5 @@
 // JavaScript code to populate story cards
 document.addEventListener('DOMContentLoaded', function () {
-    // Sample data (you can replace this with your actual data)
     const stories = [
         {
             title: 'Story 1',
@@ -10,6 +9,12 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             title: 'Story 2',
+            time: '6:00 pm P.S.T., Sunday, 2/18/24',
+            uploadedBy: 'user456',
+            summary: 'Today I went to the store and I bought some salmon and broccoli to make for dinner for the next week.'
+        },
+        {
+            title: 'Story 3',
             time: '6:00 pm P.S.T., Sunday, 2/18/24',
             uploadedBy: 'user456',
             summary: 'Today I went to the store and I bought some salmon and broccoli to make for dinner for the next week.'

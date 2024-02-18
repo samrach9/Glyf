@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- Connecting Javascript -->
-    <script src="script.js"></script>
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -117,11 +115,11 @@
         width: 300px; /* Adjust as needed */
     }
 
-    #hiddenText {
+    .hiddenText {
         display: none;
     }
 
-    #cardDisplay {
+    .hiddenText .cardDisplay {
         display: block;
     }
 
@@ -145,22 +143,80 @@
     </div>
     
     <div class="storyContainer">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div id="cardDisplay" class="storyCard" onclick="expandCard(this)">
-                    <div class="storyImage"></div>
-                        <p class="storyCardFont">Story Card</p>
-                        <p class="storyCardDetails">5:30 pm P.S.T., Saturday, 2/17/24</p>
-                        <p class="storyCardDetails">Uploaded by: user123</p>
-                        <p id="hiddenText">Today I went to the store and I bought some salmon and broccoli to make for dinner for the next week.</p>
-                </div>
-            </div>
+        <div class="row" id="storyRowContainer">
+            
         </div>
     </div>
-    
+
+    <!-- Javascript to populate cards -->
+    <script>
+        const stories = [
+            {
+                title: 'Story 1',
+                time: '5:30 pm P.S.T., Saturday, 2/17/24',
+                uploadedBy: 'user123',
+                summary: 'Today I went to the store and I bought some salmon and broccoli to make for dinner for the next week.'
+            },
+            {
+                title: 'Story 2',
+                time: '6:00 pm P.S.T., Sunday, 2/18/24',
+                uploadedBy: 'user456',
+                summary: 'Today I went to the store and I bought some salmon and broccoli to make for dinner for the next week.'
+            },
+            {
+                title: 'Story 3',
+                time: '6:00 pm P.S.T., Sunday, 2/18/24',
+                uploadedBy: 'user456',
+                summary: 'Today I went to the store and I bought some salmon and broccoli to make for dinner for the next week.'
+            },
+            // Add more stories as needed
+        ];
+
+        // Function to create a story card HTML element
+        function createStoryCard(story) {
+            const storyCard = document.createElement('div');
+            storyCard.classList.add('storyCard');
+
+            storyCard.innerHTML = `
+                <div class="cardDisplay storyCard" onclick="expandCard(this)">
+                    <div class="storyImage"></div>
+                    <p class="storyCardFont">${story.title}</p>
+                    <p class="storyCardDetails">${story.time}</p>
+                    <p class="storyCardDetails">Uploaded by: ${story.uploadedBy}</p>
+                    <p class="storyCardDetails hiddenText">${story.summary}</p>
+                </div>
+            `;
+
+            storyCard.querySelector('.cardDisplay').addEventListener("click", function() {
+                var hiddenText = this.querySelector('.hiddenText');
+                if (hiddenText.style.display === "none" || hiddenText.style.display === "") {
+                    hiddenText.style.display = "block";
+                } else {
+                    hiddenText.style.display = "none";
+                }
+            });
+
+            return storyCard;
+        }
+
+        // Function to populate story cards
+        function populateStoryCards() {
+            const storyContainer = document.getElementById('storyRowContainer');
+
+            stories.forEach(story => {
+                const storyCard = createStoryCard(story);
+                storyContainer.appendChild(storyCard);
+            });
+        }
+
+        populateStoryCards();
+    </script>
+
     <script>
         function expandCard(card) {
             card.classList.toggle('expanded'); // Toggle the 'expanded' class
+            card.classList.toggle('hiddentText');
+
         }
     </script>
 

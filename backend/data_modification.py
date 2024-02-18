@@ -35,7 +35,6 @@ def NewStory(new_row):     # new_row is a list of strings with the values for th
 
     # need to add title column too on GPT
     
-    
 
     # Open our existing CSV file in append mode and Create a file object for this file
     with open('sethi_test_database.csv', 'a') as f_object:

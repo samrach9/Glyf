@@ -5,12 +5,14 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: 'Story 1',
             time: '5:30 pm P.S.T., Saturday, 2/17/24',
-            uploadedBy: 'user123'
+            uploadedBy: 'user123',
+            summary: 'Today I went to the store and I bought some salmon and broccoli to make for dinner for the next week.'
         },
         {
             title: 'Story 2',
             time: '6:00 pm P.S.T., Sunday, 2/18/24',
-            uploadedBy: 'user456'
+            uploadedBy: 'user456',
+            summary: 'Today I went to the store and I bought some salmon and broccoli to make for dinner for the next week.'
         },
         // Add more stories as needed
     ];
@@ -21,11 +23,23 @@ document.addEventListener('DOMContentLoaded', function () {
         storyCard.classList.add('storyCard');
 
         storyCard.innerHTML = `
-            <div class="storyImage"></div>
-            <p class="storyCardFont">${story.title}</p>
-            <p class="storyCardDetails">${story.time}</p>
-            <p class="storyCardDetails">Uploaded by: ${story.uploadedBy}</p>
+            <div class="cardDisplay storyCard" onclick="expandCard(this)">
+                <div class="storyImage"></div>
+                <p class="storyCardFont">${story.title}</p>
+                <p class="storyCardDetails">${story.time}</p>
+                <p class="storyCardDetails">Uploaded by: ${story.uploadedBy}</p>
+                <p class="storyCardDetails hiddenText">${story.summary}</p>
+            </div>
         `;
+
+        storyCard.querySelector('.cardDisplay').addEventListener("click", function() {
+            var hiddenText = this.querySelector('.hiddenText');
+            if (hiddenText.style.display === "none" || hiddenText.style.display === "") {
+                hiddenText.style.display = "block";
+            } else {
+                hiddenText.style.display = "none";
+            }
+        });
 
         return storyCard;
     }

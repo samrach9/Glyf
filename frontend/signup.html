@@ -34,6 +34,15 @@
                 color: rgb(255, 255, 255);
             }
 
+            .header {
+                font-family: quicksand;
+                color:rgb(0, 0, 0);
+                text-align:center; 
+                margin-top: 70px;
+                margin-bottom:20px;
+                font-size:50px;
+            }
+
             input[type=text], select {
                 width: 20%;
                 padding: 14px 20px;
@@ -42,6 +51,7 @@
                 border: 1px solid #ccc;
                 border-radius: 4px;
                 box-sizing: border-box;
+                margin-left:600px;
             }
 
             input[type=password] {
@@ -51,6 +61,7 @@
                 border: 1px solid #ccc;
                 border-radius: 4px;
                 cursor: pointer;
+                margin-left:600px;
             }
 
             input[type=submit]{
@@ -58,23 +69,25 @@
                 width: 20%;
             }
             input[type=submit]:hover {
-                background-color: #729f74;
+                background-color: rgb(79, 101, 157);
                 width: 20%;
+                text-align:center; 
             }
             .login {
                 font-family: inter;
                 display: flex;
                 flex-direction: column;
-                margin-top: 100px;
+                margin-top: 80px;
                 text-align: center;
                 margin-bottom:100px;
-                background-color: bisque;
+                background-color: rgb(255, 255, 255);
                 font-size: 20px;
             }
         </style>
         <title> Glyf </title>
         <link rel="icon" type="image/x-icon" href="favicon.png">
     </head>
+
     <body>
         <div class="navbar">
             <a href="home.html">Home</a>
@@ -84,7 +97,7 @@
         </div>
 
         <div class="header">
-            <p2>Glyf</p2>
+            <img src="glyflogo.png" alt="logo" width="400" height="auto">
         </div>
 
         <div class="login">
@@ -93,8 +106,7 @@
 
             <label for="Password">Password</label>
             <input type="password" id="password" name="Password" placeholder="Password">
-
-            <button type="button"><a href="success.html">submit</a></button>
         </div>
+        <button type="button"><a href="success.html">submit</a></button>
         </body>
 </html>

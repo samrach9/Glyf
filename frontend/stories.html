@@ -1,140 +1,141 @@
-<html>
-    <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-        <style>
-        .navbar {
-            overflow: hidden;
-            position: fixed; /* Set the navbar to fixed position */
-            top: 0; /* Position the navbar at the top of the page */
-            width: 100%; /* Full width */
-            background-color:rgb(251, 217, 176);
-        }
-        
-        .navbar a {
-            float: right;
-            display: block;
-            color: #000000;
-            font-family: inter;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 20px;
-            margin-right: 20px;
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+   
+   <style>
+    .navbar {
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color:rgb(251, 217, 176);
+    }
+    
+    .navbar a {
+        float: right;
+        display: block;
+        color: #000000;
+        font-family: inter;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 20px;
+        margin-right: 20px;
+    }
 
         .navbar a:hover {
             background: rgb(86, 124, 153);
             color: rgb(255, 255, 255);
         }
 
-        .header {
-            font-family: quicksand;
-            color:rgb(0, 0, 0);
-            text-align:center; 
-            margin-top: 100px;
-            margin-bottom:50px;
-            font-size:50px;
-        }
+    .header {
+        font-family: quicksand;
+        color:rgb(0, 0, 0);
+        text-align:center; 
+        margin-top: 100px;
+        margin-bottom:50px;
+        font-size:50px;
+    }
 
-        .p{
-            font-family: inter;
-        }
+    .p{
+        font-family: inter;
+    }
 
-        .storyContainer{
-            flex-wrap: wrap;
-            color: #000000;
-            border-style: solid;
-        }
-        .storyRowContainer{
-            display: flex;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-        .storyCard{
-            border-style: solid;
-            margin: auto;
-            height: 300px;
-            width: 275px;
-            text-align: center;
-            background-color: rgb(251, 217, 176);
-            border-radius: 15%;
-            align-items: center;
-            justify-content: center;
-        }
-        .storyImage{
-            border-style: solid;
-            height: 225px;
-            width: 225px;
-            margin: auto;
-            border-radius: 15%;
-            margin-top: 20px;
-            background-color: white;
-        }
-        .storyCardFont{
-            font-family: inter;
-        }
+    .storyContainer {
+        color: #000000;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    .storyRowContainer {
+       display: flex;
+       flex-wrap: wrap; /* Ensures items wrap properly */
+       justify-content: center; /* Centers items horizontally */
+       margin-top: 10px;
+       margin-bottom: 10px;
+    }
+    .storyCard {
+        border: 1px solid rgb(254, 231, 203);
+        margin: 20px;
+        height: 350px;
+        width: 280px;
+        text-align: center;
+        background-color: rgb(254, 231, 203);
+        border-radius: 10%;
+    }
+    .storyImage {
+        border: 1px solid white;
+        height: 225px;
+        width: 225px;
+        margin: auto;
+        border-radius: 10%;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        background-color: white;
+    }
+    .storyCardFont {
+        margin-top: 7px;
+        margin-bottom: 5px;
+        font-family: inter;
+        font-size: 120%;
+        font-weight: 450;
+        color: #24541C;
+    }
 
-        </style>
-        <title> Glyf </title>
-    </head>
+    .storyCardDetails {
+        margin: 2px;
+        font-family: inter;
+        font-size: 85%;
+        font-weight: 350;
+        color: #24541C;
+    }
 
-    <body>
-        <div class="navbar">
-            <a href="home.html">Home</a>
-            <a href="signup.html">Log In</a>
-            <a href="stories.html">Stories</a>
-            <a href="record.html">Record</a>
-        </div>
+    </style>
+    <title> Glyf Stories </title>
+</head>
 
-        <div class="header">
-            <p2>Stories</p2>
-        </div>
-        
-        <div class="storyContainer">
-            <div class="storyRowContainer">
+<body>
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <a href="home.html">Home</a>
+        <a href="login.html">Log In</a>
+        <a href="signup">Sign Up</a>
+        <a href="stories.html">Stories</a>
+        <a href="record.html">Record</a>
+    </div>
+
+    <!-- Story cards -->
+    <div class="header">
+        <p2>Stories</p2>
+    </div>
+    
+    <div class="storyContainer">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="storyCard">
-                    <div class="storyImage">
-
-                    </div>
-                    <div class="storyText">
+                    <div class="storyImage"></div>
                         <p class="storyCardFont">Story Card</p>
-                    </div>
-                </div>
-                <div class="storyCard">
-                    <p class="storyCardFont">Story Card</p>
-                </div>
-                <div class="storyCard">
-                    <p class="storyCardFont">Story Card</p>
-                </div>
-            </div>
-            <div class="storyRowContainer">
-                <div class="storyCard">
-                    <p class="storyCardFont">Story Card</p>
-                </div>
-                <div class="storyCard">
-                    <p class="storyCardFont">Story Card</p>
-                </div>
-                <div class="storyCard">
-                    <p class="storyCardFont">Story Card</p>
-                </div>
-            </div>
-            <div class="storyRowContainer">
-                <div class="storyCard">
-                    <p class="storyCardFont">Story Card</p>
-                </div>
-                <div class="storyCard">
-                    <p class="storyCardFont">Story Card</p>
-                </div>
-                <div class="storyCard">
-                    <p class="storyCardFont">Story Card</p>
+                        <p class="storyCardDetails">5:30 pm P.S.T., Saturday, 2/17/24</p>
+                        <p class="storyCardDetails">Uploaded by: user123</p>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
 </html>

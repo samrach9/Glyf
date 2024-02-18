@@ -73,7 +73,8 @@
     .storyCard {
     border: 1px solid rgb(254, 231, 203);
     margin: 20px;
-    width: 280px; /* Remove height property */
+    width: 280px;
+    height: 350px;
     text-align: center;
     background-color: rgb(254, 231, 203);
     border-radius: 10%;
@@ -109,13 +110,13 @@
     }
 
     .expanded {
-        height: 500px; /* Adjust as needed */
-        width: 350px; /* Adjust as needed */
+        height: 480px; 
+        width: 350px; 
     }
 
     .expanded .storyImage {
-        height: 300px; /* Adjust as needed */
-        width: 300px; /* Adjust as needed */
+        height: 300px; 
+        width: 300px; 
     }
 
     .hiddenText {
@@ -141,7 +142,8 @@
 
     <!-- Story cards -->
     <div class="header">
-        <p2>Stories</p2>
+        <h1>Stories</h1>
+        <h2>Culture is important. </h2>
     </div>
     
     <div class="storyContainer" id="storyRowContainer">
@@ -221,10 +223,17 @@
         function populateStoryCards() {
             const storyContainer = document.getElementById('storyRowContainer');
 
-            stories.forEach(story => {
-                const storyCard = createStoryCard(story);
-                storyContainer.appendChild(storyCard);
-            });
+            if (stories.length === 0) {
+                // If there are no items in the list, print out "no stories"
+                const message = document.createElement('p');
+                message.textContent = 'No stories here yet!';
+                storyContainer.appendChild(message);
+            } else {
+                stories.forEach(story => {
+                    const storyCard = createStoryCard(story);
+                    storyContainer.appendChild(storyCard);
+                });
+            }
         }
 
         populateStoryCards();

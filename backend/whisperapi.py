@@ -3,9 +3,11 @@ from dotenv import load_dotenv
 import os
 from openai import OpenAI
 from openai_test import processAI
+from openai_test import tags
 
 # Load environment variables from .env file
 load_dotenv()
+ret = []
 
 client = OpenAI()
 def processWhisper(x):
@@ -18,6 +20,7 @@ def processWhisper(x):
   )
 
 #print(transcript)
-  processAI(transcript)
+  ret = processAI(transcript)
 
 processWhisper("output.wav")
+

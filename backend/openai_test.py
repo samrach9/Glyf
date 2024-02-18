@@ -8,12 +8,12 @@ import os
 import config
 from dotenv import load_dotenv
 load_dotenv()
+# from data_modification import NewStory # Import Function to Add a New Story Onto Database
 
 #print(os.environ.get("OPENAI_API_KEY"))
 client = OpenAI()
 
-# Output Lists
-
+# Output Lists 
 story = []
 attributes = []
 
@@ -39,14 +39,14 @@ def processAI(x):
     jsonified_response=json.loads(response.model_dump_json())
     global story
     story.append(jsonified_response["choices"][0]["message"]["content"])
-
-    tags(x)
-
-    # return story
     
-    # attributesReal.append(jsonified_response["choices"][0]["message"]["content"])
-    #print(jsonified_response["choices"][0]["message"]["content"])
-    #print(story)
+    # calling tags function to generate tags
+    tags(x)
+    # return tags(x)
+    return story
+
+
+
     
     
 
@@ -68,26 +68,12 @@ def tags(x):
         presence_penalty=0
     )
     jsonified_response1=json.loads(response1.model_dump_json())
-    # keys_list = list(jsonified_response1.keys())
-    # values_list = list(jsonified_response1.values())
-    #print("this is the keys list")
-    #print(keys_list)
-    #print("\n\nthis is the values list")
-    #print(values_list)
-    #print("\n\n")
 
     global attributes
     attributes.append(jsonified_response1["choices"][0]["message"]["content"])
+
     # print(attributes)
-    #attributes.append(jsonified_response1["choices"][0]["message"])
-    #attributes.append(jsonified_response1["content"])
-    # return(attributes)
-    #print(jsonified_response1["choices"][0]["message"]["content"])
-
-
-    
+    return attributes
 
 #processAI("my name is arran, and i lived through the partition as i moved from pakistan to india")
-print(story)
-print("end global")
-print(attributes)
+

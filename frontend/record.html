@@ -148,19 +148,22 @@
 
         <button onclick="changeImage()">Change Image</button>
 
+
         <div class="flex-container">
+            <img class="img" src="image1.jpg" alt="Image 1" onclick="changeImage()">
+
             <script>
                 function changeImage() {
-                    var imageElement = document.getElementById('myImage');
+                var imageElement = document.querySelector('.img');
             
             // Check the current source and change it accordingly
                 if (imageElement.src.endsWith('mic.png')) {
-                        imageElement.src = 'mic.PNG';
-                    } else {
-                        imageElement.src = 'redX.png';
-                    }
+                    imageElement.src = 'mic.png';
+                } else {
+                    imageElement.src = 'redX.png';
                 }
-            </script>
+            }
+        </script>
             <div class="about"> reccorind etc. </div>
         </div>
 

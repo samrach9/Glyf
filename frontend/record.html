@@ -123,6 +123,10 @@
     </head>
 
     <body>
+
+
+
+        
         <div class="navbar">
             <a href="home.html">Home</a>
             <a href="login.html">Log In</a>
@@ -134,6 +138,27 @@
         <div class="header">
             <p2>Record Your Story</p2>
         </div>
+
+        <img id="myImage" src="image1.jpg" alt="Image 1">
+
+        <button onclick="changeImage()">Change Image</button>
+
+        <div class="flex-container"><
+            <script>
+                function changeImage() {
+                    var imageElement = document.getElementById('myImage');
+            
+            // Check the current source and change it accordingly
+                if (imageElement.src.endsWith('mic.png')) {
+                        imageElement.src = 'mic.png';
+                    } else {
+                        imageElement.src = 'redX.png';
+                    }
+                }
+            </script>
+            <div class="about"> reccorind etc. </div>
+        </div>
+
 
         <div class="flex-container">
             <img src="mic.png" alt="mic" width="400" height="400">

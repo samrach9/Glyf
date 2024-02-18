@@ -71,25 +71,26 @@
        margin-bottom: 10px;
     }*/
     .storyCard {
-    border: 1px solid rgb(254, 231, 203);
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    margin-top: 5px;
-    width: 280px;
-    height: 350px;
-    padding-bottom: 10px;
-    text-align: center;
-    background-color: rgb(254, 231, 203);
-    border-radius: 10%;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    display: flex; 
-    flex-direction: column; 
-    flex-grow: 1;
-}
+        border: 1px solid rgb(254, 231, 203);
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        margin-top: 5px;
+        width: 280px;
+        height: 350px;
+        padding-bottom: 10px;
+        text-align: center;
+        background-color: rgb(254, 231, 203);
+        border-radius: 10%;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        display: flex; 
+        flex-direction: column; 
+        flex-grow: 1;
+        overflow: hidden;
+    }
     .storyImage {
-        border: 1px solid white;
+        border: 0px solid white;
         width: 225px;
         margin: auto;
         height:225px;
@@ -130,11 +131,14 @@
     .expanded {
         height: 480px; 
         width: 350px; 
+        height: auto;
     }
 
     .expanded .storyImage {
         height: 300px; 
         width: 300px; 
+        max-height: 225px;
+        max-width: 100%;
     }
 
     .hiddenText {
@@ -142,6 +146,10 @@
     }
 
     .hiddenText .cardDisplay {
+        display: block;
+    }
+
+    #x{
         display: block;
     }
 
@@ -176,8 +184,8 @@
             //storyCard.classList.add('storyCard');
 
             storyCard.innerHTML = `
-        <div class="cardDisplay storyCard" onclick="expandCard(this)">
-            <div class="storyImage"></div>
+            <div class="cardDisplay storyCard" onclick="expandCard(this)">
+            <img class="storyImage" id="image1" src="./img4.png">
             <p class="storyCardFont">${story.title}</p>
             <p class="storyCardDetails">${story.time}</p>
             <p class="storyCardSummary hiddenText">${story.summarizedStory}</p>
@@ -218,9 +226,28 @@
                 });
             }
         }
+        // Function to set background image of elements with class .storyImage
+        let currentIndex = 1; // Initialize currentIndex
+
+        function ReplacingImage() {
+            // Define an array of image URLs
+            const imageUrls = ['./img1.png', './img2.png', './img3.png', './img4.png'];
+            
+            // Get the image element
+            const imageElement = document.getElementById("image" + currentIndex);
+            
+            // Update the src attribute with the current image URL
+            imageElement.src = imageUrls[currentIndex];
+            
+            // Increment the currentIndex and reset it if it exceeds the length of the imageUrls array
+            currentIndex = (currentIndex + 1) % imageUrls.length;
+        }
+        
 
 
-        populateStoryCards();
+// Call the function to populate story cards
+populateStoryCards();
+// ReplacingImage();
     </script>
 
     <script>

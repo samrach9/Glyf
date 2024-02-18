@@ -29,9 +29,12 @@ from fuzzywuzzy import fuzz
 
 # print new data with new column
 # Load the CSV file into a DataFrame
-data_ld = pd.read_csv('backend/data.csv')
+data_ld = pd.read_csv('backend/database.csv')
 print(data_ld)
-data_ld['columns'] = data_ld['story'] + ' ' + data_ld['location'] +' ' + data_ld['theme'] + ' ' + data_ld['event name']
+# Combine specific columns into a single string for fuzzy matching
+data_ld['columns'] = data_ld['Summarized Story'] + ' ' + data_ld['Event Name'] + ' ' + data_ld['Theme'] + ' ' + data_ld['Location']
+
+print(data_ld.dtypes)
 
 # Prompt user for search query
 searchstr = input("Enter your search: ")
@@ -46,14 +49,14 @@ choices = data_ld['columns']
 results = fuzzy_search(searchstr, choices)
 
 # Define the columns you want to display
-columns_to_display = ['story', 'location', 'theme', 'event name']
+columns_to_display = ['Original Story', 'Summarized Story', 'Decade', 'Event Name', 'Theme', 'Location']
 
 # Print the selected columns for each match
 for match in results:
-    match_index = match[2]  # Get the index of the matched row
-    matched_row = data_ld.iloc[match_index]  # Retrieve the row from the DataFrame
-    selected_columns = matched_row[columns_to_display]  # Select the specified columns
-    print(selected_columns)
+    # match_index = match[2]  # Get the index of the matched row
+    # matched_row = data_ld.iloc[match_index]  # Retrieve the row from the DataFrame
+    # selected_columns = matched_row[columns_to_display]  # Select the specified columns
+    print(match)
 
 """
 

@@ -1,5 +1,12 @@
 <html>
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
         <style>
         .navbar {
             overflow: hidden;
@@ -27,20 +34,16 @@
         }
 
         .header {
-            font-family: inherit;
+            font-family: quicksand;
             color:rgb(0, 0, 0);
             text-align:center; 
             margin-top: 100px;
-            margin-bottom:100px;
-        }
-          /* Main content */
-        .main {
-            margin-top: 30px; /* Add a top margin to avoid content overlay */
+            margin-bottom:50px;
+            font-size:50px;
         }
 
-        .p1{
-            inline-size: 300px;
-            font-size: 30px;
+        .p{
+            font-family: inter;
         }
 
         .storyContainer{
@@ -56,10 +59,25 @@
         .storyCard{
             border-style: solid;
             margin: auto;
-            height: 200px;
-            width: 325px;
+            height: 300px;
+            width: 275px;
             text-align: center;
             background-color: rgb(251, 217, 176);
+            border-radius: 15%;
+            align-items: center;
+            justify-content: center;
+        }
+        .storyImage{
+            border-style: solid;
+            height: 225px;
+            width: 225px;
+            margin: auto;
+            border-radius: 15%;
+            margin-top: 20px;
+            background-color: white;
+        }
+        .storyCardFont{
+            font-family: inter;
         }
 
         </style>
@@ -75,41 +93,46 @@
         </div>
 
         <div class="header">
-            <h1>Stories</h1>
+            <p2>Stories</p2>
         </div>
         
         <div class="storyContainer">
             <div class="storyRowContainer">
                 <div class="storyCard">
-                    <p>Story Card</p>
+                    <div class="storyImage">
+
+                    </div>
+                    <div class="storyText">
+                        <p class="storyCardFont">Story Card</p>
+                    </div>
                 </div>
                 <div class="storyCard">
-                    <p>Story Card</p>
+                    <p class="storyCardFont">Story Card</p>
                 </div>
                 <div class="storyCard">
-                    <p>Story Card</p>
-                </div>
-            </div>
-            <div class="storyRowContainer">
-                <div class="storyCard">
-                    <p>Story Card</p>
-                </div>
-                <div class="storyCard">
-                    <p>Story Card</p>
-                </div>
-                <div class="storyCard">
-                    <p>Story Card</p>
+                    <p class="storyCardFont">Story Card</p>
                 </div>
             </div>
             <div class="storyRowContainer">
                 <div class="storyCard">
-                    <p>Story Card</p>
+                    <p class="storyCardFont">Story Card</p>
                 </div>
                 <div class="storyCard">
-                    <p>Story Card</p>
+                    <p class="storyCardFont">Story Card</p>
                 </div>
                 <div class="storyCard">
-                    <p>Story Card</p>
+                    <p class="storyCardFont">Story Card</p>
+                </div>
+            </div>
+            <div class="storyRowContainer">
+                <div class="storyCard">
+                    <p class="storyCardFont">Story Card</p>
+                </div>
+                <div class="storyCard">
+                    <p class="storyCardFont">Story Card</p>
+                </div>
+                <div class="storyCard">
+                    <p class="storyCardFont">Story Card</p>
                 </div>
             </div>
         </div>

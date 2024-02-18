@@ -55,7 +55,6 @@
         .img {
             max-width: 300px;
             max-height: 300px;
-           
         }
 
         .about{
@@ -154,14 +153,15 @@
 
             <script>
                 function changeImage() {
-                var imageElement = document.querySelector('.img');
+                    var imageElement = document.querySelector('.img');
             
             // Check the current source and change it accordingly
-                if (imageElement.src.endsWith('mic.png')) {
-                    imageElement.src = 'redX.png';
-                } else {
+                    setTimeout(function () {
+                        imageElement.src = 'redX.png'; // Original image
+                    }, 10000);
+
                     imageElement.src = 'mic.png';
-                }
+
             }
         </script>
             <div class="about"> reccorind etc. </div>

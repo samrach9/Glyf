@@ -92,7 +92,7 @@ def summarize(x):
         messages=[
         {
             "role": "user",
-            "content": f"Assign this story 4 tags: location, historical event/ cultural event, decade of historical event, and personal story theme, and return a list seperated by commas, do not include the promts in this list (if there is no clear prompt answer, return 'N/A' in the list instead of the potential answer): {x}"
+            "content": f"Assign this story 4 tags: decade, historical event/ cultural event name or title, personal story theme, location. Return a list seperated by commas, do not include the promts in this list (if there is no clear prompt answer, return 'N/A' in the list instead of the potential answer): {x}"
         }
         ],
         temperature=1,

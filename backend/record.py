@@ -8,6 +8,7 @@ import jsonify
 import json
 import config
 load_dotenv()
+from data_modification import NewStory
 client = OpenAI()
 story = []
 
@@ -84,7 +85,7 @@ def summarize(x):
         messages=[
         {
             "role": "user",
-            "content": f"please tag this story with these four tags: location, historical event/ cultural event, decade of historical even, and personal story theme, seperated by commas: {x}"
+            "content": f"Assign this story 4 tags: location, historical event/ cultural event, decade of historical event, and personal story theme, and return a list seperated by commas, do not include the promts in this list (if there is no clear prompt answer, return 'N/A' in the list instead of the potential answer): {x}"
         }
         ],
         temperature=1,
@@ -95,9 +96,13 @@ def summarize(x):
     )
   jsonified_response1=json.loads(response1.model_dump_json())
   #this adds the tags!!! 
-  story.append(jsonified_response1["choices"][0]["message"]["content"])
+  cat = jsonified_response1["choices"][0]["message"]["content"]
+  eagle = cat.split(',')
+  for x in eagle:
+     story.append(x)
   return (story)
 
 
 processWhisper("output.wav")
 print(story)
+NewStory(story)

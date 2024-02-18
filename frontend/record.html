@@ -1,0 +1,164 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+        <style>
+        .navbar {
+            overflow: hidden;
+            position: fixed; /* Set the navbar to fixed position */
+            top: 0; /* Position the navbar at the top of the page */
+            width: 100%; /* Full width */
+            background-color:rgb(251, 217, 176);
+        }
+        
+        .navbar a {
+            float: right;
+            display: block;
+            color: #000000;
+            font-family: inter;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            margin-right: 20px;
+        }
+
+        .navbar a:hover {
+            background: rgb(86, 124, 153);
+            color: rgb(255, 255, 255);
+        }
+
+        .header {
+            font-family: quicksand;
+            color:rgb(0, 0, 0);
+            text-align:center; 
+            margin-top: 100px;
+            margin-bottom:50px;
+            font-size:50px;
+        }
+          /* Main content */
+        .main {
+            margin-top: 30px; /* Add a top margin to avoid content overlay */
+        }
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 100px;
+        }
+        .img {
+            max-width: 300px;
+            max-height: 300px;
+        }
+
+        .about{
+            font-family: inter;
+            text-align:center;
+            inline-size: 300px;
+            margin-top: 100px;
+            margin-bottom: 200px;
+            font-size: 30px;
+            margin-left: 100px;
+        }
+        .flex-container2 {
+            font-family: inter;
+            display: flex;
+            flex-direction: row;
+            border-radius: 50%;
+            padding: 50px;
+            justify-content: center;
+        }
+
+        .people{
+            font-family: inter;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flex-container3 {
+            font-family: inter;
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+            text-align: center;
+            margin-bottom:50px;
+            background-color: bisque;
+            font-size: 40px;
+        }
+
+        .explain{
+            font-family: inter;
+            text-align:center;
+            inline-size: 500px;
+            margin-top: 50px;
+            margin-bottom: 100px;
+            font-size: 30px;
+            margin-left: 300px;
+            margin-right: 100px;
+        }
+
+        .p1{
+            font-family: inter;
+            inline-size: 300px;
+            font-size: 30px;
+        }
+
+        .team{
+            font-family: inter;
+            text-align: center;
+            font-size: 40px;
+        }
+
+        .flex-container4 {
+            font-family: inter;
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+            margin-bottom:50px;
+        }
+
+        </style>
+        <title> Glyf </title>
+    </head>
+
+    <body>
+
+
+
+        
+        <div class="navbar">
+            <a href="home.html">Home</a>
+            <a href="signup.html">Log In</a>
+            <a href="stories.html">Stories</a>
+            <a href="record.html">Record</a>
+        </div>
+
+        <div class="header">
+            <p2>Record Your Story</p2>
+        </div>
+
+
+        <div class="flex-container">
+            <img class="img" src="mic.png" alt="Image 1" onclick="changeImage()" >
+            <script>
+                function changeImage() {
+                var imageElement = document.querySelector('.img');
+
+                    imageElement.src = 'redX.png'
+                    setTimeout(function () {
+                        imageElement.src = 'mic.png';
+                        document.getElementById("demo").innerHTML = "Here is what you said!";
+                    }, 10000);
+                }
+        </script>
+        <p id="demo"></p>
+        </div>
+        
+    </body>
+</html>

@@ -1,5 +1,13 @@
 <html>
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
         <style>
         .navbar {
             overflow: hidden;
@@ -22,16 +30,17 @@
         }
 
         .navbar a:hover {
-            background: rgb(144, 186, 144);
+            background: rgb(86, 124, 153);
             color: rgb(255, 255, 255);
         }
 
         .header {
-            font-family: inherit;
+            font-family: quicksand;
             color:rgb(0, 0, 0);
             text-align:center; 
-            margin-top: 100px;
-            margin-bottom:100px;
+            margin-top: 70px;
+            margin-bottom:20px;
+            font-size:50px;
         }
           /* Main content */
         .main {
@@ -41,16 +50,24 @@
             display: flex;
             flex-direction: row;
             justify-content: center;
+            margin-top: 10px;
+        }
+
+        .flex-container3 p {
+            margin-top:50px;
+            font-size:40px;
         }
         .about{
+            font-family: inter;
             text-align:center;
-            inline-size: 300px;
-            margin-top: 100px;
+            inline-size: 400px;
+            margin-top: 10px;
             margin-bottom: 200px;
             font-size: 30px;
             margin-left: 100px;
         }
         .flex-container2 {
+            font-family: inter;
             display: flex;
             flex-direction: row;
             border-radius: 50%;
@@ -59,76 +76,105 @@
         }
 
         .people{
+            font-family: inter;
             display: flex;
             flex-direction: column;
+            text-align:center;
+            margin-left:70px;
+            margin-bottom:50px;
+        }
+
+        .people img{
+            border-radius: 50%;
+            border: 1px solid #000000;
+            margin-bottom:20px;
         }
 
         .flex-container3 {
+            font-family: inter;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            margin-top: 50px;
+            margin-top: 10px;
             text-align: center;
-            margin-bottom:100px;
+            margin-bottom:20px;
             background-color: bisque;
+            font-size: 40px;
         }
 
         .explain{
+            font-family: inter;
             text-align:center;
             inline-size: 500px;
             margin-top: 50px;
             margin-bottom: 100px;
             font-size: 30px;
-            margin-left: 500px;
+            margin-left: 300px;
+            margin-right: 100px;
         }
 
         .p1{
+            font-family: inter;
             inline-size: 300px;
             font-size: 30px;
         }
 
         .team{
+            font-family: inter;
             text-align: center;
+            font-size: 40px;
+            margin-top: 50px;
+        }
+
+        .flex-container4 {
+            font-family: inter;
+            display: flex;
+            flex-direction: row;
+            margin-top: 30px;
+            margin-bottom:50px;
         }
 
         </style>
         <title> Glyf </title>
+        <link rel="icon" type="image/x-icon" href="favicon.png">
     </head>
 
     <body>
         <div class="navbar">
-            <a href="#home.html">Home</a>
-            <a href="#login.html">Log In</a>
-            <a href="#signup">Sign Up</a>
-            <a href="#stories.html">Stories</a>
+            <a href="home.html">Home</a>
+            <a href="signup.html">Log In</a>
+            <a href="stories.html">Stories</a>
+            <a href="record.html">Record</a>
         </div>
 
         <div class="header">
-            <h1>Glyf</h1>
+            <img src="glyflogo.png" alt="logo" width="400" height="auto">
         </div>
 
         <div class="flex-container">
             <img src="stamps.png" alt="stamps" width="400" height="400">
-            <div class="about"> Super important project that means a lot and everyone will use and yeah we should win also preserving cultures which is cool!</div>
+            <div class="about"> Glyf is an accessible online database that works intergenerationally to preserve cultures, experiences, and traditions by recording our life stories, and organizing them for anyone to access.</div>
         </div>
 
         <div class="flex-container3"> 
-            <h1> About: </h1> 
-            <sec class="explain">Glyph is an online database that works intergenerationally to preserve cultures stories and languages. 
-            Users may input their own personal stories...</sec> 
+            <p> About: </p>
+            <div class="flex-container4">
+                <sec class="explain">Glyph is an online database that works intergenerationally to preserve cultures stories and languages. 
+                Users may input their own personal stories...</sec> 
+                <img src="mail.png" alt="mail" width="300" height="300">
+            </div>
         </div>
 
         <div class="team">
-            <h1>Team:</h1>
+            <p2>Team:</p2>
         </div>
 
         <div class="flex-container2">  
-            <sec class="people"><img src="arran.jpg" alt="arran" width="100" height=auto> Arran </sec>
-            <sec class="people"><img src="samhita.jpg" alt="samhita" width="100" height=auto> Samhita </sec>
-            <sec class="people"><img src="gwyn.jpg" alt="gwyn" width="100" height=auto> Gwyn </sec>
-            <sec class="people"><img src="jessie.jpg" alt="jessie" width="100" height=auto> Jessie </sec>
-            <sec class="people"><img src="anika.jpg" alt="anika" width="100" height=auto> Anika </sec>
-            <sec class="people"><img src="david.jpg" alt="david" width="100" height=auto> David </sec>
+            <sec class="people"><img src="arran2.png" alt="arran" width="130" height=auto> Arran </sec>
+            <sec class="people"><img src="samhita2.png" alt="samhita" width="130" height=auto> Samhita </sec>
+            <sec class="people"><img src="gwyn3.png" alt="gwyn" width="130" height=auto> Gwyn </sec>
+            <sec class="people"><img src="jessie.png" alt="jessie" width="150" height=auto> Jessie </sec>
+            <sec class="people"><img src="anika.png" alt="anika" width="150" height=auto> Anika </sec>
+            <sec class="people"><img src="david.png" alt="david" width="150" height=auto> David </sec>
         </div>
     </body>
 </html>

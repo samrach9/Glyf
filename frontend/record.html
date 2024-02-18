@@ -52,12 +52,11 @@
             justify-content: center;
             margin-top: 100px;
         }
-        
         .img {
             max-width: 300px;
-            max-height: 300px;       
+            max-height: 300px;
+           
         }
-
 
         .about{
             font-family: inter;
@@ -151,25 +150,19 @@
 
 
         <div class="flex-container">
-            
+            <img class="img" src="mic.png" alt="Image 1" onclick="changeImage()">
 
             <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                
-                var imageElement = document.createElement('img');
-                imageElement.src = 'mic.png'; // Initial image
-                imageElement.alt = 'Toggle Button';
-                imageElement.id = 'toggleButton';
-
-                document.body.appendChild(imageElement);
-
-                imageElement.addEventListener('click', function () {
+                function changeImage() {
+                var imageElement = document.querySelector('.img');
+            
+            // Check the current source and change it accordingly
+                if (imageElement.src.endsWith('mic.png')) {
                     imageElement.src = 'redX.png';
-                    setTimeout(function () {
-                        imageElement.src = 'image1.jpg'; // Original image
-                    }, 10000);
-                });
-            });                
+                } else {
+                    imageElement.src = 'mic.png';
+                }
+            }
         </script>
             <div class="about"> reccorind etc. </div>
         </div>

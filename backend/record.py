@@ -15,7 +15,6 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 client = OpenAI()
-story = []
 
 
 def record_audio():
@@ -60,12 +59,12 @@ def processWhisper(x):
     response_format="text"
   )
   #print(summarize(transcript))
-  
   return(summarize(transcript))
 
-@app.route('/summarize')
 def summarize(x):
   #uses the openAPI to summarize story from transcript
+  story = []
+  summary = []
   response = client.chat.completions.create(
     model="gpt-4",      
     messages=[
@@ -81,9 +80,11 @@ def summarize(x):
     presence_penalty=0
   )
   jsonified_response=json.loads(response.model_dump_json())
+  
   #this adds the real story
   story.append(x)
   #this adds the summary
+  summary.append(jsonified_response["choices"][0]["message"]["content"])
   story.append(jsonified_response["choices"][0]["message"]["content"])
   #uses the openAPI to get tags from the summarized story
   response1 = client.chat.completions.create(
@@ -104,20 +105,10 @@ def summarize(x):
   #this adds the tags!!! 
   cat = jsonified_response1["choices"][0]["message"]["content"]
   eagle = cat.split(',')
-  for x in eagle:
-     story.append(x)
-  return jsonify(story)
-
-@app.route('/test')
-def test():
-  print("testing test")
-  output = "test"
-  return jsonify(output)
-
-
-# processWhisper("output.wav")
-# print(story)
-# NewStory(story)
+  for y in eagle:
+     story.append(y)
+  NewStory(story)
+  return jsonify(summary)
 
 
 @app.route('/summarizer')

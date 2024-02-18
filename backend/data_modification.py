@@ -38,7 +38,7 @@ def NewStory(new_row):     # new_row is a list of strings with the values for th
     
 
     # Open our existing CSV file in append mode and Create a file object for this file
-    with open('backend/sethi_test_database.csv', 'a') as f_object:
+    with open('sethi_test_database.csv', 'a') as f_object:
         # Pass this file object to csv.writer() and get a writer object
         writer_object = writer(f_object)
         # Pass the list as an argument into the writerow()
@@ -46,13 +46,14 @@ def NewStory(new_row):     # new_row is a list of strings with the values for th
         # Close the file object
         f_object.close()
 
-    data_ld = pd.read_csv('backend/sethi_test_database.csv')
+    data_ld = pd.read_csv('sethi_test_database.csv')
     data_ld = data_ld.rename_axis('Submission Number')
     # TESTING: print new data with new column
+    print("New Story Function called")
     print(data_ld)
 
 def UpdateLikeCount(row_number):
-    data_ld = pd.read_csv('backend/sethi_test_database.csv')
+    data_ld = pd.read_csv('sethi_test_database.csv')
     data_ld = data_ld.rename_axis('Submission Number')
 
     # save current like count 
@@ -66,7 +67,7 @@ def UpdateLikeCount(row_number):
 
     # update CSV file
     data_ld._set_value(row_number, "Likes", current_like_count)
-    data_ld.to_csv("backend/sethi_test_database.csv", index=False)
+    data_ld.to_csv("sethi_test_database.csv", index=False)
 
     # TESTING: print new data with new cell
     print(data_ld)

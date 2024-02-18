@@ -145,18 +145,17 @@
         </div>
 
 
-
-
-
         <div class="flex-container">
             <img class="img" src="mic.png" alt="Image 1" onclick="changeImage()">
-
             <script>
                 function changeImage() {
-                    imageElement.src = 'redX.png';
+                var imageElement = document.querySelector('.img');
+
+
                     setTimeout(function () {
-                        imageElement.src = 'mic.png';
+                        imageElement.src = 'redX.png';
                     }, 10000);
+                    imageElement.src = 'mic.png'
 
             }
         </script>

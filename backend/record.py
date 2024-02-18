@@ -11,6 +11,7 @@ load_dotenv()
 from data_modification import NewStory
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+import csv
 
 app = Flask(__name__)
 CORS(app)
@@ -115,3 +116,19 @@ def summarize(x):
 def executing():
   record_audio()
   return(processWhisper("output.wav"))
+
+@app.route('/getJSON')
+def make_json():
+  # create a list to hold the data
+  data = []
+  csvFilePath = r'sethi_test_database.csv'
+  # Open the CSV file and read its contents
+  with open(csvFilePath, encoding='utf-8') as csvf:
+      csvReader = csv.DictReader(csvf)
+      
+      # Iterate over each row in the CSV file
+      for idx, rows in enumerate(csvReader):
+          # Add the row data to the list with the row number as the key
+          data.append({idx: rows})
+  return data
+ 

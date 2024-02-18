@@ -57,6 +57,7 @@
             display: flex;
             flex-direction: row;
             justify-content: center;
+            margin-top: 100px;
         }
         .img {
             max-width: 300px;
@@ -146,20 +147,9 @@
             display: flex;
             flex-direction: column;
             align-items: center; /* Center the items horizontally */
-            margin-top: 50px;
-            margin: 50px auto;
-            margin-left: 300px;
-            margin-right: 300px;
-        }
-
-        .summarize_text_format{
-            font-family: inter;
-            font-size: medium;
-            text-align: center;
         }
         </style>
         <title> Glyf </title>
-        <link rel="icon" type="image/x-icon" href="./Images/favicon.png">
     </head>
 
     <body>
@@ -180,14 +170,14 @@
 
 
         <div class="flex-container">
-            <img class="img" src="./Images/mic.png" alt="Image 1" onclick="changeImage()">
+            <img class="img" src="mic.png" alt="Image 1" onclick="changeImage()">
             <script>
                 async function changeImage() {
                     var imageElement = document.querySelector('.img');
-                    imageElement.src = './Images/redX.png';
+                    imageElement.src = 'redX.png';
                     const output = await fetch('http://127.0.0.1:5000/summarizer').then(response => response.json());
                     setTimeout(function () {
-                        imageElement.src = './Images/mic.png';
+                        imageElement.src = 'mic.png';
                         document.getElementById("demo").innerHTML = output;
                     }, 0);
                 }
@@ -195,10 +185,10 @@
         </div>
         <div class="flex-container">
             <div class="submit-container">
-                <p class = "summarize_text_format", id="demo"></p>
+                <p id="demo"></p>
                 <button class="submit-button" onclick="hideOutput()">Submit</button>
             </div>
-         <script>
+            <script>
                 function hideOutput() {
                     document.getElementById("demo").innerHTML = ""; // Clear the content of the output element
                 }
